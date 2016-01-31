@@ -1,0 +1,23 @@
+{
+  "name": "zooapp",
+  "version": "1.0.0",
+  "description": "Zoo app that takes records about zoo care takers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajurado2204/ZooApp.git"
+  },
+  "author": "Alejandra Jurado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajurado2204/ZooApp/issues"
+  },
+  "homepage": "https://github.com/ajurado2204/ZooApp#readme",
+  "dependencies": {
+    "mysql": "^2.10.2",
+    "prompt": "^0.2.14"
+  }
+}
