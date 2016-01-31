@@ -67,19 +67,19 @@ var zoo = {
     prompt.get(['visit'],function(err, result){
       if(err) throw err;
 
-      if(result.visit == "Q"){
+      if(result.visit === "Q"){
         console.log("-------------------------------         Main menu!        ------------------------------------\n");
         currentScope.menu();
         currentScope.promptUser();
-      }else if(result.visit == "O") {
+      }else if(result.visit === "O") {
         currentScope.type(input_scope);
-      }else if(result.visit == "I") {
+      }else if(result.visit === "I") {
         currentScope.animId(input_scope);
-      }else if(result.visit == "N") {
+      }else if(result.visit === "N") {
         currentScope.name(input_scope);
-      }else if(result.visit == "A"){
+      }else if(result.visit === "A"){
         currentScope.all(input_scope);
-      }else if(result.visit == "C"){
+      }else if(result.visit === "C"){
         currentScope.care(input_scope);
       }else{
         console.log("Sorry didn't get that, come again?\n");
@@ -224,16 +224,16 @@ var zoo = {
     prompt.get(['input'], function(err, result){
       if(err) throw err;
 
-      if(result.input == "Q"){
+      if(result.input === "Q"){
         self.exit();
-      }else if(result.input == "A"){
+      }else if(result.input === "A"){
         self.add(self);
-      }else if(result.input == "U"){
+      }else if(result.input === "U"){
         self.update(self);
-      }else if(result.input == "V"){
+      }else if(result.input === "V"){
         self.visit();
         self.view(self);
-      }else if(result.input == "D"){
+      }else if(result.input === "D"){
         self.adopt(self);
       }else{
         console.log("Sorry didn't get that, come again?\n");
