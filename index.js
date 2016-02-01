@@ -96,10 +96,10 @@ var zoo = {
       if(err) throw err;
 
       var post = result.animal_type;
-      connection.query('SELECT * FROM animals WHERE type = ?', post, function(err, rows){
+      connection.query('SELECT COUNT(*) AS theCount FROM animals WHERE type = ?', post, function(err, result){
         if(err) throw err;
 
-        console.log("The count of type " + post + " is " + rows.length);
+        console.log("The count of type " + post + " is " + result[0].theCount);
         console.log("-------------------------------         Main menu!        ------------------------------------\n");
         currentScope.menu();
         currentScope.promptUser();
@@ -118,10 +118,10 @@ var zoo = {
       //INNER JOIN caretakers
       //WHERE caretakers.id = animals.caretaker_id AND caretakers.city = city_name
       var post = result.city_name;
-      connection.query('SELECT * FROM animals INNER JOIN caretakers WHERE caretakers.id = animals.caretaker_id AND caretakers.city = ?', post, function(err, rows){
+      connection.query('SELECT COUNT(*) AS theCount FROM animals INNER JOIN caretakers WHERE caretakers.id = animals.caretaker_id AND caretakers.city = ?', post, function(err, result){
         if(err) throw err;
 
-        console.log("The number of animals in " + post + " is: " + rows.length);
+        console.log("The number of animals in " + post + " is: " + result[0].theCount);
         currentScope.visit();
         currentScope.view(currentScope);
       });
@@ -174,10 +174,10 @@ var zoo = {
   all: function(input_scope) {
     var currentScope = input_scope;
 
-    connection.query('SELECT * FROM animals', function (err, rows){
+    connection.query('SELECT COUNT(*) AS theCount FROM animals', function (err, result){
       if(err) throw err;
 
-      console.log("The total amount of animals is " + rows.length);
+      console.log("The total amount of animals is " + result[0].theCount);
       currentScope.visit();
       currentScope.view(currentScope);
     });
